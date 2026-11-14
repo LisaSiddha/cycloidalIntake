@@ -18,15 +18,15 @@ public class Intake extends SubsystemBase {
   private static final double DEPLOYED_DEGS = 120;
  
   //canids
-  private static final int PIVOT_LEFT_ID = 31;
-  private static final int PIVOT_RIGHT_ID = 32;
-  private static final int ROLLER_LEFT_ID = 33;
-  private static final int ROLLER_RIGHT_ID = 34;
+  private static final int PIVOT_LEFT_ID = 9;
+  //private static final int PIVOT_RIGHT_ID = 32;
+  private static final int ROLLER_LEFT_ID = 11;
+  private static final int ROLLER_RIGHT_ID = 10;
  
   
  
   private final TalonFX PIVOT_LEFT = new TalonFX(PIVOT_LEFT_ID);
-  private final TalonFX PIVOT_RIGHT = new TalonFX(PIVOT_RIGHT_ID);
+  //private final TalonFX PIVOT_RIGHT = new TalonFX(PIVOT_RIGHT_ID);
   private final TalonFX ROLLER_LEFT = new TalonFX(ROLLER_LEFT_ID);
   private final TalonFX ROLLER_RIGHT = new TalonFX(ROLLER_RIGHT_ID);
  
@@ -51,7 +51,7 @@ public class Intake extends SubsystemBase {
     pivotConfig.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     PIVOT_LEFT.getConfigurator().apply(pivotConfig);
     pivotConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive; // mirror
-    PIVOT_RIGHT.getConfigurator().apply(pivotConfig);
+    //PIVOT_RIGHT.getConfigurator().apply(pivotConfig);
  
    
     TalonFXConfiguration rollerConfig = new TalonFXConfiguration();
@@ -66,13 +66,13 @@ public class Intake extends SubsystemBase {
  
    
     PIVOT_LEFT.setPosition(Units.degreesToRotations(STOWED_DEGS));
-    PIVOT_RIGHT.setPosition(Units.degreesToRotations(STOWED_DEGS));
+    //PIVOT_RIGHT.setPosition(Units.degreesToRotations(STOWED_DEGS));
   }
  
   private void setPivot(double degrees) {
     double rotations = Units.degreesToRotations(degrees);
     PIVOT_LEFT.setControl(pivotRequest.withPosition(rotations));
-    PIVOT_RIGHT.setControl(pivotRequest.withPosition(rotations));
+    //PIVOT_RIGHT.setControl(pivotRequest.withPosition(rotations));
   }
  
   private void setRollers(double volts) {

@@ -40,10 +40,10 @@ public class Drive extends SubsystemBase {
       Math.hypot(DriveConstants.ROBOT_LENGTH / 2, DriveConstants.ROBOT_WIDTH / 2);
  
  
-  private final SwerveModule frontLeft = new SwerveModule(1, 2, 11, 0.0, false);
+  private final SwerveModule frontLeft = new SwerveModule(7, 8, 11, 0.0, false);
   private final SwerveModule frontRight = new SwerveModule(3, 4, 12, 0.0, true);
   private final SwerveModule backLeft = new SwerveModule(5, 6, 13, 0.0, false);
-  private final SwerveModule backRight = new SwerveModule(7, 8, 14, 0.0, true);
+  private final SwerveModule backRight = new SwerveModule(1, 2, 14, 0.0, true);
  
   private final Pigeon2 gyro = new Pigeon2(DriveConstants.GYRO_ID); 
  
